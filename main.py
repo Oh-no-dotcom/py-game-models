@@ -12,7 +12,7 @@ def main() -> None:
         for nickname, player in game_data.items():
             email = player.get("email", "")
             bio = player.get("bio", "")
-            race_data = player["race"]
+            race_data = player.get("race", "")
             race_obj, _ = Race.objects.get_or_create(
                 name=race_data["name"],
                 defaults={
